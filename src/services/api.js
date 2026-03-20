@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const API = axios.create({
-  baseURL:"https://battery-monitor-93742821e808.herokuapp.com/"
+  baseURL:"https://battery-monitor-93742821e808.herokuapp.com"
   //  baseURL:"http://localhost:5000"
 })
 
