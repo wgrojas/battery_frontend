@@ -1,0 +1,214 @@
+/* ----------------- HEADER USUARIO ----------------- */
+.headerBar {
+  background: #ffffff;
+  color: #2c3e50;
+  padding: 12px 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  flex-wrap: wrap;
+}
+
+.headerBar:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.usuarioBienvenida {
+  font-weight: 600;
+  font-size: 16px;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.usuarioNombre {
+  color: #27ae60;
+  font-weight: 700;
+  margin-left: 6px;
+  word-break: break-word;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.headerBar .btn {
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 8px 14px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.headerBar .btn-success:hover,
+.headerBar .btn-danger:hover {
+  transform: scale(1.05);
+}
+
+/* ----------------- CONTENEDOR PRINCIPAL ----------------- */
+.dashboard-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+/* ----------------- TARJETAS GENERALES ----------------- */
+.card-custom {
+  background: #ffffff;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  padding: 18px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+/* ----------------- GRAFICA ----------------- */
+.grafica-card {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 24px auto;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.grafica-titulo {
+  text-align: center;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 18px;
+}
+
+.grafica-container {
+  position: relative;
+  width: 100%;
+  height: 340px;
+}
+
+/* ----------------- TABLA ----------------- */
+.tabla-card {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow-x: auto;
+}
+
+.tabla-card table {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.tabla-card th {
+  background: #f8f9fa;
+  color: #2c3e50;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.tabla-card td {
+  white-space: nowrap;
+}
+
+.tabla-card .table-responsive {
+  border-radius: 12px;
+}
+
+/* ----------------- TABLET ----------------- */
+@media (max-width: 768px) {
+  .headerBar {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    padding: 14px 16px;
+  }
+
+  .usuarioBienvenida {
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .headerActions {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .headerBar .btn {
+    min-width: 140px;
+  }
+
+  .dashboard-container {
+    padding: 0 10px;
+  }
+
+  .grafica-container {
+    height: 300px;
+  }
+
+  .card-custom {
+    padding: 15px;
+  }
+}
+
+/* ----------------- CELULAR PEQUEÑO ----------------- */
+@media (max-width: 480px) {
+  .headerBar {
+    padding: 12px;
+    border-radius: 10px;
+    gap: 12px;
+  }
+
+  .usuarioBienvenida {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .usuarioNombre {
+    margin-left: 4px;
+  }
+
+  .headerActions {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .headerBar .btn {
+    width: 100%;
+    min-width: unset;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .grafica-container {
+    height: 260px;
+  }
+
+  .card-custom {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .tabla-card th,
+  .tabla-card td {
+    font-size: 13px;
+    padding: 8px;
+  }
+}

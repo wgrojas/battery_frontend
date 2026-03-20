@@ -1,0 +1,176 @@
+.battery-wrapper{
+
+width:100%;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+margin-top:30px;
+margin-bottom:30px;
+
+}
+
+.battery{
+
+width:320px;
+height:130px;
+border:6px solid #444;
+border-radius:14px;
+position:relative;
+background:#e9e9e9;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,0.35);
+
+}
+
+.battery::after{
+
+content:"";
+position:absolute;
+right:-22px;
+top:40px;
+width:22px;
+height:50px;
+background:#444;
+border-radius:4px;
+
+}
+
+.battery-level{
+
+height:100%;
+position:relative;
+overflow:hidden;
+transition:width .8s ease;
+
+}
+
+/* colores */
+
+.battery-level.green{
+background:#27ae60;
+box-shadow:0 0 20px rgba(39,174,96,.6);
+}
+
+.battery-level.orange{
+background:#f39c12;
+box-shadow:0 0 18px rgba(243,156,18,.6);
+}
+
+.battery-level.red{
+background:#e74c3c;
+animation:lowBattery 1.5s infinite;
+}
+
+/* flujo ghost */
+
+.battery-flow{
+
+position:absolute;
+top:0;
+left:-60%;
+width:60%;
+height:100%;
+
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.35),
+rgba(255,255,255,.7),
+rgba(255,255,255,.35),
+transparent
+);
+
+filter:blur(10px);
+
+animation:energyFlow 2.5s linear infinite;
+
+}
+
+@keyframes energyFlow{
+
+0%{
+left:-60%;
+}
+
+100%{
+left:120%;
+}
+
+}
+
+/* partículas de energía */
+
+.battery-particles{
+
+position:absolute;
+top:0;
+left:0;
+width:200%;
+height:100%;
+
+background-image:radial-gradient(
+rgba(255,255,255,.35) 1px,
+transparent 1px
+);
+
+background-size:18px 18px;
+
+opacity:.35;
+
+animation:particlesMove 6s linear infinite;
+
+}
+
+@keyframes particlesMove{
+
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-120px);
+}
+
+}
+
+/* batería baja */
+
+@keyframes lowBattery{
+
+0%{
+box-shadow:0 0 10px rgba(231,76,60,.6);
+}
+
+50%{
+box-shadow:0 0 25px rgba(231,76,60,1);
+}
+
+100%{
+box-shadow:0 0 10px rgba(231,76,60,.6);
+}
+
+}
+
+.battery-percent{
+
+position:absolute;
+width:100%;
+text-align:center;
+font-size:32px;
+font-weight:bold;
+color:#222;
+top:50%;
+transform:translateY(-50%);
+pointer-events:none;
+
+}
+
+.battery-text{
+
+text-align:center;
+font-size:24px;
+font-weight:bold;
+margin-top:12px;
+
+}
