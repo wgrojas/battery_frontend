@@ -7,30 +7,20 @@ const API = axios.create({
 
 API.interceptors.request.use((config)=>{
 
-  const token = localStorage.getItem("token")
+  // const token = localStorage.getItem("token")
 
-  if(token){
-    config.headers.Authorization = `Bearer ${token}`
+  // if(token){
+  //   config.headers.Authorization = `Bearer ${token}`
+  // }
+  
+  if (typeof localStorage !== "undefined") {
+  const token = localStorage.getItem("token");
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
   }
+}
 
   return config
 })
 
 export default API
-
-// import axios from "axios";
-
-// const API = axios.create({
-//   baseURL: "http://localhost:5000", // Cambia si tu backend corre en otra URL
-// });
-
-// // Interceptor para agregar token automáticamente
-// API.interceptors.request.use((config) => {
-//   const token = localStorage.getItem("token");
-//   if (token) {
-//     config.headers.Authorization = `Bearer ${token}`;
-//   }
-//   return config;
-// });
-
-// export default API;
